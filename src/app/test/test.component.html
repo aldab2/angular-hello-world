@@ -1,0 +1,167 @@
+<style>
+  .blue {
+    color: blue !important;
+  }
+</style>
+
+<div class="ui inverted tiny menu">
+  <div class="active item">Yup</div>
+  <div class="icon  item"><i class="home icon"></i></div>
+</div>
+
+<div class="ui container">
+  <p>For some reason... everything is large</p>
+  <div class="ui segments">
+    <div class="ui segment">
+      <div class="ui header">{{greetUser()}}</div>
+      <div class="ui content">This is getting complicated</div>
+    </div>
+    <div class="ui secondary segment">
+      {{siteUrl}}<br>
+      Lets hope it all works out <br>
+      2 + 2 = {{2+2}} <br>
+      {{"Welcome " + name}} <br>
+      {{"Your name is "+name.length +" chars  Long"}} <br>
+      {{ " Uppercasing "+ name +" results in "+ name.toUpperCase()}}
+    </div>
+  </div>
+  <div class="ui header">Property Binding</div>
+
+  <div class="ui form">
+    <label> This is diabled using normal property binding</label>
+    <input type="text" [disabled]="isDisabled" name="" id="" class="ui  field">
+    <label> This is diabled using bind hyphen (bind-) property binding </label>
+    <input type="text" bind-disabled="isDisabled" name="" id="" class="ui  field">
+
+    <button class="ui button" (click)="disableField()">Disable Field</button>
+
+  </div>
+
+  <div class="ui header">Class Binding - with Property Binding</div>
+
+  <div class="ui form">
+    <div class="ui field">
+      <label for="asd" [class.blue]='isBlue'> This label has boolean class binding but the feild div has ngClass</label>
+      <input type="text" [disabled]="isDisabled" name="asd" id="asd">
+
+    </div>
+    <div class="ui field">
+      <label [ngClass]="semanticLabelClass"> This label has ngCLass binding </label>
+      <input type="text" bind-disabled="isDisabled" name="" id="">
+
+    </div>
+    <div [ngClass]="semanticFieldClass">
+      <label for="asd"> The feild div has ngClass binding</label>
+      <input type="text" name="asd" id="asd">
+
+    </div>
+
+    <button class="ui button" (click)="disableField()">Disable Fields And make labels blue</button>
+
+  </div>
+  <hr>
+  <div class="ui small header">
+    We also have style binding but i skipped it. Check the vid tutorial is you are intrested.
+  </div>
+  <hr>
+  <br><br>
+  <div class="ui small header">
+    We applid event binding with no arguemnts in the buttons above
+  </div>
+  <br>
+  <div class="ui medium header">
+    Event Binding with properties <br>
+    Passing a normal property
+  </div>
+  <button (click)="toggleMessage(message)" class="ui inverted primary   button">
+    Toggle Text
+  </button> {{message}}
+  <br>
+  <div class="ui medium header">
+
+    Passing a inline statement
+  </div>
+  <button (click)="message = message.length==0?'Working Yeah?':''" class="ui inverted primary   button">
+    Toggle Text using inline statement
+  </button> {{message}}
+  <br>
+  <div class="ui header">
+    Passing the event handler ( Not sure about the name)
+  </div>
+  <button (click)="message = $event.type" class="ui black button">
+    display event type Using the event paramerter
+  </button>
+
+  <br>
+
+  <div #mheader class="ui header">Passing and element (Reference Variable )</div>
+  <button (click)="toggleElementVisbility(mheader)" class="ui small black button">
+    Toggle header visibility
+  </button>
+  <br>
+  <hr>
+  <br>
+  <div class="ui container">
+    <div class="ui tiny header">In this section I will start skipping anything that I feel is obsious or does not need
+      documenting <br>
+      black items ===> Skipped items <br>
+      blue item ===> Explained Items
+    </div>
+    <div class="ui bulleted list">
+      <div class="blue item">Two Way Binding
+        <div class="description"><strong>We need to import FormsModule to use it</strong> to ensure that the values in
+          the html are in sync with the component attributes</div>
+        <br>
+        <input [(ngModel)]="message" type="text" name="twbinding" id="twbinding"> Message : {{message}}
+      </div>
+      <hr>
+      <div class="item">
+        <h4>ngIf ngSwitch and ngFor</h4>
+        <div class="description">
+          ngIf -> show an element <strong>could be in then</strong> based on a condition <strong>else show
+            another</strong> <br>
+          ngSwitch -> show an element based on the result of a switch statement <br>
+          ngFor -> show a list of items with the ablity to iterate inside them <br>
+          <br><strong>Note : </strong> ngIf can be used inside ngFor to provide more power and selectivity.
+        </div>
+      </div>
+
+      <hr>
+      <div class="item">
+        <h4>Component Interaction (Using @input @output Decorators)</h4>
+        <div class="description">
+          <br>
+          <h5>In this example, we have a button that on click send data to the parent (Hello from Test Component string)
+            and set it as the header at the top of the page </h5>
+          <h5>And we have a lebel that will show the data we recieve from the parent</h5>
+          <br>
+          <button (click)="sendToParent(name)" class="ui black button">
+            {{interactoinBtnText}}
+          </button>
+          <br><br>
+          <strong>Recived from parent : {{firstMessage}}</strong>
+          <br>
+          <strong>Recived from parent : {{secondMessage}}</strong>
+        </div>
+      </div>
+      <hr>
+    <div class="item">
+      <h5>Pipes</h5>
+      <div class="description">
+        Syntax (interpolation | pipeOpertator)
+        functions as string.format but for html
+      </div>
+    </div>
+    <hr>
+   
+    </div>
+
+    
+  </div>
+
+
+
+
+  
+
+</div>
