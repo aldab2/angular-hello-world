@@ -2,12 +2,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 
-<div [ngSwitch]="title">
-  <h1 *ngSwitchCase="'Abdullah Barnawi'">Hello {{title}}</h1>
-  <h1 *ngSwitchDefault> <h1></h1>Welcome To My Angular Hello Wolrd</h1>
+
+<!-- <app-menu  (childEvent)="navigate($event)"></app-menu> -->
+
+<div class="ui inverted massive menu">
+  <a routerLink="/home"    routerLinkActive="active"  class="icon   item">Home</a>
+
+  <a routerLink="/departments"  routerLinkActive="active"  class="link item">Departments</a>
+
+  <a routerLink="/employees"  routerLinkActive="active" class="link item">Employees</a>
 </div>
 
-<app-test (childEvent)="title=$event"  [parentData1]="message1" [secondMessage]="message2"></app-test>
+<div [ngSwitch]="title">
+  <h1 *ngSwitchCase="'Abdullah Barnawi'">Hello {{title}}</h1>
+  <h1 *ngSwitchDefault> <h1>Route : '{{route}}' <br> Selected Menu : {{menuValue}}</h1>Welcome To My Angular Hello Wolrd</h1>
+</div>
 
 
+<!-- <app-test  (childEvent)="title=$event"  [parentData1]="message1" [secondMessage]="message2"></app-test>
+ -->
+
+<!-- <div *ngIf="isPathEmpty" >
+
+<app-test  (childEvent)="title=$event"  [parentData1]="message1" [secondMessage]="message2"></app-test>
 <app-users></app-users>
+
+</div> -->
+
+
+<router-outlet></router-outlet>

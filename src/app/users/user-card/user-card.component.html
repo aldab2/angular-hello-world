@@ -1,0 +1,28 @@
+
+
+  <div class="ui  card">
+    <div class=" center aligned  image">
+      <i class="ui massive teal building icon"></i>
+    </div>
+    <div class="content">
+      <a class="header">{{ user.username }}</a>
+      <div class="meta">
+        <span class="date">{{ user.name }}</span>
+      </div>
+      <div class="description">
+        Address : <br />
+        {{ user | address }}
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="user icon"></i>
+        {{ user.email }}
+      </a>
+    </div>
+  </div>
+
+
+  <br><br>
+
+

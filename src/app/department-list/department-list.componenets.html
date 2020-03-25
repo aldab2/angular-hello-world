@@ -1,0 +1,12 @@
+
+<div class="ui container">
+  <h3>
+    Department List <br>
+    seletected dID {{selectedId}}
+  </h3>
+  
+  <div class="ui compact vertical menu">
+    <div *ngFor="let dep of departments" (click)="onSelect(dep)"  [ngClass]='isSelected(dep)'><strong>{{dep.id}}</strong> -{{dep.name}}</div>
+  </div>
+</div>
+

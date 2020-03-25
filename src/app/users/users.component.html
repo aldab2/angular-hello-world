@@ -1,21 +1,23 @@
-
-<div  class="ui container">
+<div class="ui container">
   <div class="ui bulleted list">
     <div class="ui item">
       <h4>Services</h4>
       <div class="ui description">
-        In this example I managed the following Sections : <br> 
+        In this example I managed the following Sections : <br>
         Services , Http requests and ngFor. <br>
         I simply send an http request to json placehoder and fetched the data and displayed them as cards
       </div>
     </div>
   </div>
   <br><br>
-<div class="ui  eight column  grid">
- 
+  <div class="ui  eight column  grid">
+
     <div *ngFor="let user of users">
       <div class="ui  column">
-        <div class="ui card">
+        <app-user-card [user]="user" [id]="id"></app-user-card>
+
+
+        <!-- <div class="ui card">
           <div class=" center aligned  image">
             <i class="ui massive teal user icon"></i>
           </div>
@@ -27,8 +29,7 @@
             <div class="description">
               Address : <br>
               {{user | address}}
-            <!--   Vs <br>
-              Pump: {{num | ordinal}} -->
+
             </div>
           </div>
           <div class="extra content">
@@ -37,12 +38,14 @@
               {{user.email}}
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
-    </div> 
-    
-      
     </div>
 
- 
+
+  </div>
+  <br><br>
+  <hr>
+  <h2>Routing is implemented in the menu</h2>
+<br><br><br>
 </div>

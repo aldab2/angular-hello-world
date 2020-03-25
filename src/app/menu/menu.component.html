@@ -1,0 +1,20 @@
+<div class="ui inverted massive menu">
+  <div #menuHome (click)="updateMenu(menuHome)" class="icon active link  item"><i class="home icon"></i></div>
+  <div #menuDep (click)="updateMenu(menuDep)"  class="link item">Departments</div>
+  <div #menuEmp (click)="updateMenu(menuEmp)" class="link item">Employees</div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.menu').menu();
+    $('.menu').on('click', function() {
+      if(!$(this).hasClass('dropdown')) {
+        $(this)
+          .addClass('active')
+          .siblings('.item')
+            .removeClass('active');
+      }
+    });
+});
+ 
+</script>

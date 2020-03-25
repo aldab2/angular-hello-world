@@ -4,22 +4,34 @@ import { FormsModule } from '@angular/forms';
 import {UserAddressPipe} from './models/user'
 
 import {HttpClientModule} from '@angular/common/http'
-//import {Pipe , PipeTransform} from '@angular/core'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
+
 import { UsersComponent } from './users/users.component';
 
 
+/**
+ * The DepartmentListComponent and UserListComponent are in this import
+ */
+import {routingComponetns} from './app-routing.module';
+import { MenuComponent } from './menu/menu.component';
+import { OverviewComponent } from './department-details/overview/overview.component';
+import { ContactsComponent } from './department-details/contacts/contacts.component';
+import { UserCardComponent } from './users/user-card/user-card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
     UsersComponent,
-    UserAddressPipe 
+    UserAddressPipe,
+    routingComponetns,
+    MenuComponent,
+    OverviewComponent,
+    ContactsComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +44,8 @@ import { UsersComponent } from './users/users.component';
 })
 
 export class AppModule {
-  
+
+
 
 
  }
